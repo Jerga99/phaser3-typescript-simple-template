@@ -27,18 +27,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.ts$/,
+        test: /\.ts?$/,
         include: path.resolve(__dirname, 'src'),
         loader: 'ts-loader'
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        }
       }
     ]
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
   },
   devServer: {
     static: path.resolve(__dirname, 'build'),
